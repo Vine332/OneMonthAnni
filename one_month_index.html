@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff7fb">
+  <title>Happy One Monthsary ပါကလေးရေ.. 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--rose:#d76a91;--ink:#5c3c49;--paper:#fffaf7;--shadow:0 20px 55px rgba(116,61,84,.20)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;overflow-x:hidden;font-family:"Noto Serif Myanmar",serif;color:var(--ink);
+      background:radial-gradient(circle at 15% 10%,rgba(255,255,255,.95),transparent 22%),
+      radial-gradient(circle at 85% 12%,rgba(224,210,255,.55),transparent 22%),
+      radial-gradient(circle at 50% 88%,rgba(255,213,228,.48),transparent 28%),
+      linear-gradient(160deg,#fff8fb 0%,#fdf0f5 48%,#f7f0ff 100%)}
+    #fx{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+    .floaty{position:absolute;top:-30px;opacity:.65;animation:fall linear forwards;filter:drop-shadow(0 3px 5px rgba(127,61,90,.12))}
+    @keyframes fall{0%{transform:translate3d(0,-30px,0) rotate(0);opacity:0}15%{opacity:.7}100%{transform:translate3d(var(--drift),108vh,0) rotate(420deg);opacity:.03}}
+    main{position:relative;z-index:1;min-height:100vh;padding:36px 16px 70px}
+    .hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+    .eyebrow{font-family:"Playfair Display",serif;letter-spacing:3px;font-size:12px;color:#a45f78;margin-bottom:12px;opacity:.8}
+    h1{margin:0;max-width:760px;font-size:clamp(28px,8vw,52px);line-height:1.45;color:#a94f72;text-shadow:0 2px 0 rgba(255,255,255,.75)}
+    .sub{margin:12px 0 30px;font-size:14px;opacity:.72}
+    .book-wrap{width:min(92vw,430px);height:305px;position:relative;perspective:1200px}
+    .book{position:absolute;inset:18px 0 0;border-radius:18px 8px 8px 18px;box-shadow:var(--shadow);
+      background:linear-gradient(135deg,rgba(255,255,255,.24),transparent 40%),linear-gradient(145deg,#eaa4b9,#cf6f94);overflow:hidden}
+    .book:before{content:"";position:absolute;left:16px;top:0;bottom:0;width:3px;background:rgba(255,255,255,.28);box-shadow:5px 0 0 rgba(116,56,82,.07)}
+    .book:after{content:"";position:absolute;inset:13px 12px 13px 25px;border:1px solid rgba(255,255,255,.35);border-radius:13px 6px 6px 13px}
+    .book-title{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;z-index:2;padding:25px}
+    .book-title .small{font-family:"Playfair Display",serif;font-size:13px;letter-spacing:2.6px;opacity:.82;margin-bottom:8px}
+    .book-title strong{font-size:24px;line-height:1.55;text-shadow:0 2px 10px rgba(96,44,66,.2)}
+    .book-title .date{margin-top:12px;font-size:12px;opacity:.8}
+    .ribbon{position:absolute;top:-6px;right:36px;width:32px;height:110px;background:rgba(251,224,232,.8);clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%);z-index:3}
+    .open-btn{margin-top:28px;border:0;padding:13px 24px;border-radius:999px;background:rgba(255,255,255,.72);backdrop-filter:blur(10px);
+      box-shadow:0 12px 28px rgba(103,52,73,.14);color:#9e4c6b;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer}
+    .open-btn:active{transform:scale(.96)}
+    .content{display:none;max-width:960px;margin:0 auto}.content.show{display:block}
+    .section-title{text-align:center;margin:6px 0 24px;font-size:clamp(23px,6vw,34px);color:#a75473}
+    .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:8px}
+    .shot{position:relative;margin:0;padding:8px 8px 30px;background:#fff;border-radius:8px;box-shadow:0 14px 32px rgba(93,48,65,.16);
+      opacity:0;transform:translateY(60px) scale(.75) rotate(var(--r));overflow:hidden}
+    .shot img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:5px}
+    .shot:after{content:attr(data-cap);position:absolute;left:0;right:0;bottom:6px;text-align:center;font-size:11px;color:#9b6377}
+    .shot:nth-child(1){--r:-3deg}.shot:nth-child(2){--r:3deg}.shot:nth-child(3){--r:2deg}.shot:nth-child(4){--r:-2.5deg}
+    .shot.reveal{animation:photoIn .95s cubic-bezier(.16,.85,.24,1.12) forwards}
+    @keyframes photoIn{0%{opacity:0;transform:translateY(70px) scale(.72) rotate(calc(var(--r) - 8deg));filter:blur(7px)}
+      70%{opacity:1;transform:translateY(-6px) scale(1.03) rotate(calc(var(--r) + 1deg));filter:blur(0)}
+      100%{opacity:1;transform:translateY(0) scale(1) rotate(var(--r));filter:blur(0)}}
+    .letter-wrap{position:relative;width:min(780px,95%);margin:42px auto 0;opacity:0;transform:translateY(110px) scale(.96)}
+    .letter-wrap.reveal{animation:letterIn 1.15s cubic-bezier(.18,.75,.2,1) forwards}
+    @keyframes letterIn{from{opacity:0;transform:translateY(110px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .tape{position:absolute;width:95px;height:28px;background:rgba(234,214,170,.55);z-index:3;transform:rotate(-7deg);top:-12px;left:50%;margin-left:-48px}
+    .letter{position:relative;padding:42px 24px 44px;border-radius:10px;border:1px solid rgba(191,115,139,.23);
+      background:repeating-linear-gradient(0deg,transparent 0 31px,rgba(214,158,175,.11) 32px),linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.1)),var(--paper);
+      box-shadow:0 24px 60px rgba(96,52,68,.18);overflow:hidden}
+    .letter h2{position:relative;margin:0 0 24px;text-align:center;color:#ad5675;font-size:clamp(22px,5.4vw,31px);line-height:1.6}
+    .letter p{position:relative;margin:0;white-space:pre-line;font-size:clamp(16px,4.1vw,19px);line-height:2.05;font-weight:600}
+    .heart-end{position:relative;text-align:center;margin-top:26px;font-size:22px}
+    .footer{text-align:center;font-family:"Playfair Display",serif;font-size:12px;letter-spacing:1.4px;opacity:.5;margin:30px 0 10px}
+    .hero.leave{animation:heroOut .8s ease forwards}@keyframes heroOut{to{opacity:0;transform:translateY(-35px) scale(.97)}}
+    @media(min-width:780px){.gallery{grid-template-columns:repeat(4,1fr);gap:18px}.letter{padding:54px 58px 58px}}
+  </style>
+</head>
+<body>
+  <div id="fx"></div>
+  <main>
+    <section class="hero" id="hero">
+      <div class="eyebrow">ONE MONTH • ONE LOVE • MANY MEMORIES</div>
+      <h1>Happy One Monthsary ပါကလေးရေ.. 💗</h1>
+      <p class="sub">ကိုကိုတို့ရဲ့ ပထမတစ်လပြည့် အမှတ်တရလေး</p>
+      <div class="book-wrap">
+        <div class="book">
+          <div class="ribbon"></div>
+          <div class="book-title">
+            <div class="small">OUR LITTLE STORY</div>
+            <strong>ကိုကိုနဲ့ ကလေးလေးရဲ့<br>တစ်လပြည့်အမှတ်တရ</strong>
+            <div class="date">with love, always ♡</div>
+          </div>
+        </div>
+      </div>
+      <button class="open-btn" id="openBtn">ဖွင့်ကြည့်မယ် 💌</button>
+    </section>
+
+    <section class="content" id="content">
+      <h2 class="section-title">Our First Month Together ✨</h2>
+      <div class="gallery">
+        <figure class="shot" data-cap="memory 01"><img src="photo1.jpg" alt="photo 1"></figure>
+        <figure class="shot" data-cap="memory 02"><img src="photo2.jpg" alt="photo 2"></figure>
+        <figure class="shot" data-cap="memory 03"><img src="photo3.jpg" alt="photo 3"></figure>
+        <figure class="shot" data-cap="memory 04"><img src="photo4.jpg" alt="photo 4"></figure>
+      </div>
+
+      <div class="letter-wrap" id="letterWrap">
+        <div class="tape"></div>
+        <article class="letter">
+          <h2>Happy 1 Month Anniversary ပါ<br>ကိုကို့ကလေးလေးရေ 💞</h2>
+          <p>ဘာလိုလိုနဲ့ ကိုကိုတို့နှစ်ယောက် တစ်လတောင်ပြည့်သွားကြပြီနော်။
+
+တစ်လဆိုတာ အချိန်အရမ်းရှည်ကြီးတော့ မဟုတ်ပေမယ့် ကလေးလေးနဲ့ အတူဖြတ်သန်းခဲ့ရတဲ့ နေ့ရက်တိုင်းက ကိုကို့အတွက်တော့ အမှတ်တရတွေအပြည့်နဲ့၊ ပြန်တွေးမိတိုင်း ပြုံးမိစေတဲ့ နေ့ရက်လေးတွေဖြစ်နေပြီ။
+
+ကိုကို့ရဲ့အချစ်တွေကို နားလည်ပေးပြီး တန်ဖိုးထားပေးတဲ့အတွက်လည်း ကလေးလေးကို အများကြီးကျေးဇူးတင်ပါတယ်ဗျာနော်။ ကလေးလေးရဲ့ ရယ်သံလေးတွေ၊ စကားပြောပုံလေးတွေ၊ ဆိုးနွဲ့ပုံလေးတွေကအစ ကိုကို့နေ့ရက်တွေကို ပိုပြီးလှပစေပါတယ်။
+
+အချိန်တွေက တစ်ရက်ပြီးတစ်ရက်၊ တစ်ပတ်ပြီးတစ်ပတ်၊ တစ်နှစ်ပြီးတစ်နှစ် ပြောင်းသွားနိုင်ပေမယ့် ကိုကို့ကလေးလေးအပေါ်ထားတဲ့ အချစ်ကတော့ မပြောင်းလဲဘဲ တစ်နေ့ထက်တစ်နေ့ ပိုပိုပြီးနက်ရှိုင်းလာမှာပါ။
+
+ဘာတွေပဲဖြစ်လာဖြစ်လာ ကိုကိုက ကလေးလေးရဲ့ရှေ့မှာ မားမားမတ်မတ်ရပ်တည်ပေးမယ်။ ပျော်တဲ့အချိန်ဆို အတူရယ်ပေးမယ်၊ စိတ်ညစ်တဲ့အချိန်ဆို အနားကနေ မထွက်ဘဲ နားထောင်ပေးမယ်။ ဒါကြောင့် ကိုကို့အနားမှာပဲ အကြာကြီးနေပေးပါနော်။
+
+ကိုကိုက ကလေးလေးကို အများကြီးချစ်တာမို့ ဘာအကြောင်းကြောင့်မှ ကိုကိုတို့နှစ်ယောက် မခွဲကြေးနော်။ စိတ်ကောက်ချင်ရင်လည်း စိတ်ကောက်ပါ၊ ဆိုးချင်ရင်လည်း အများကြီးဆိုးပါ။ ကိုကိုက အလိုလိုက်ပြီး ချော့ပေးနေမှာမို့ ကိုကို့ရင်ခွင်ထဲမှာပဲ ချစ်စရာကောင်းကောင်းနဲ့ ဆိုးနေပါ ကလေးလေးရေ။
+
+ဒီတစ်လပြည့်က ကိုကိုတို့အတွက် အစပဲဖြစ်ပါစေ။ နောက်လာမယ့် လတွေ၊ နှစ်တွေတိုင်းမှာလည်း အခုလိုပဲ တစ်ယောက်လက်ကိုတစ်ယောက် မလွှတ်ဘဲ အမှတ်တရအသစ်တွေ အများကြီးဖန်တီးသွားကြမယ်နော်။
+
+များးးကြီးးး ချစ်တယ် ကိုကို့ကလေးငယ်လေး 💗</p>
+          <div class="heart-end">♡ 1 Month Down, Forever To Go ♡</div>
+        </article>
+      </div>
+      <div class="footer">MADE WITH LOVE • FOR MY FAVORITE PERSON</div>
+    </section>
+  </main>
+  <script>
+    const fx=document.getElementById("fx"),hero=document.getElementById("hero"),content=document.getElementById("content"),
+    openBtn=document.getElementById("openBtn"),shots=[...document.querySelectorAll(".shot")],letterWrap=document.getElementById("letterWrap");
+    function particle(){
+      const el=document.createElement("span"); el.className="floaty";
+      const items=["♡","♥","✦","·"]; el.textContent=items[Math.floor(Math.random()*items.length)];
+      el.style.left=Math.random()*100+"vw"; el.style.fontSize=(9+Math.random()*16)+"px";
+      el.style.color=Math.random()>.45?"rgba(204,92,132,.65)":"rgba(150,126,205,.60)";
+      el.style.setProperty("--drift",(-55+Math.random()*110)+"px"); el.style.animationDuration=(5.5+Math.random()*5)+"s";
+      fx.appendChild(el); setTimeout(()=>el.remove(),11000);
+    }
+    setInterval(particle,320); for(let i=0;i<16;i++) setTimeout(particle,i*120);
+    openBtn.addEventListener("click",()=>{
+      hero.classList.add("leave");
+      setTimeout(()=>{
+        hero.style.display="none"; content.classList.add("show"); window.scrollTo({top:0,behavior:"smooth"});
+        shots.forEach((shot,i)=>setTimeout(()=>shot.classList.add("reveal"),i*500));
+        setTimeout(()=>{
+          letterWrap.classList.add("reveal");
+          setTimeout(()=>letterWrap.scrollIntoView({behavior:"smooth",block:"start"}),500);
+        },2450);
+      },820);
+    });
+  </script>
+</body>
+</html>
